@@ -1,0 +1,20 @@
+\documentclass[]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+%opening
+
+\begin{document}
+
+\section{Dependency Parsing}
+\subsection{Dependency Grammars}
+\paragraph{Dependency grammars are a way to represent syntactic structure using a 'dependency' notion of the words themselves, without any explicit phrase structure rules.}
+\begin{figure}
+	\includegraphics[width=\linewidth]{/images/dependency.png}
+	\label{fig:dep1}
+\end{figure}
+
+Figure \ref{fig:dep1}: A typical dependency parse in (CoreNLP parse)
+
+
+\end{document}

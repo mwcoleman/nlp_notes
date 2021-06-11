@@ -1,0 +1,12 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {1}N-Gram Language Models}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Definition}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Applying the markov assumption to text for the purpose of building up a language model (a distribution of probabilities):}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The above specific case is a 1st order markov model- a 'bigram' language model; each word's probability is conditioned on the preceding word only. We can extend this to an nth order markov model- an n-gram:}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Learning the probabilities - MLE}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Evaluating models}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Evaluating the probability of a sequence of text based on the language model could be done a bunch of ways, but if it were simply the joint probability then it would be sensitive to the sequence length.}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{So, commonly, a measure called 'perplexity', the inverse joint probability normalised by the length (\# words), is used. The perplexity of a sequence of text $W$ is:}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Smoothing, Backoff and Interpolation}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{n-gram combinations that are unseen in the training corpora can cause the joint probability for a sequence to equal zero. A simple way to combat this is by shifting mass (e.g. 'add-one smoothing'):}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{An alternative is to 'back off' the n-gram order until the gram is observed in the vocabulary. Alternatively, Interpolation enforces constant backoff by mixing $N$ n-gram models (where $N$ is the order.)}{2}\protected@file@percent }

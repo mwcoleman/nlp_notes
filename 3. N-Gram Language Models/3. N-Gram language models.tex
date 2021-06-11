@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{N-Gram Language Models}
+\subsection{Definition}
+\paragraph{Applying the markov assumption to text for the purpose of building up a language model (a distribution of probabilities):}
+\begin{align}
+	P(w_i | w_{<i}) &= P(w_i|w_{i-1})
+\end{align}
+\paragraph{The above specific case is a 1st order markov model- a 'bigram' language model; each word's probability is conditioned on the preceding word only. We can extend this to an nth order markov model- an n-gram:}
+\begin{align}
+	P(w_i|w_{i-n+1 < i})
+\end{align}
+\subsection{Learning the probabilities - MLE}
+\begin{align}
+	P(w_i|w_{i-n+1 < i}) &= \frac{\# counts(w_{i-n+1 < i}, w_i)}{\# counts(w_{i-n+1 <i})}
+\end{align}
+\subsection{Evaluating models}
+\paragraph{Evaluating the probability of a sequence of text based on the language model could be done a bunch of ways, but if it were simply the joint probability then it would be sensitive to the sequence length.}
+\paragraph{So, commonly, a measure called 'perplexity', the inverse joint probability normalised by the length (\# words), is used. The perplexity of a sequence of text $W$ is:}
+\begin{align}
+	PP(W) &= \sqrt[N]{\frac{1}{\prod_i^N P(w_i|w{i-n+1}<i)}} 
+\end{align}
+where $W$ is the sequence of text
+\newpage
+\subsection{Smoothing, Backoff and Interpolation}
+
+\paragraph{n-gram combinations that are unseen in the training corpora can cause the joint probability for a sequence to equal zero. A simple way to combat this is by shifting mass (e.g. 'add-one smoothing'):}
+	\begin{align}
+	P(w_i|w_{i-n+1 < i}) &= \frac{\# counts(w_{i-n+1 < i}, w_i)+1}{\# counts(w_{i-n+1 <i})+|V|}
+	\end{align}
+	\paragraph{An alternative is to 'back off' the n-gram order until the gram is observed in the vocabulary.  Alternatively, Interpolation enforces constant backoff by mixing $N$ n-gram models (where $N$ is the order.)}
+	\begin{align}
+	P(w_i|w_{<i}) &= \sum_{n=1}^N \lambda_n P(w_i|w_{i-n+1 < i})
+	\end{align}
+
+
+
+\end{document}
+
+
+
