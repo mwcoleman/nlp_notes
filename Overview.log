@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.6.2)  12 JUN 2021 19:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.6.2)  12 JUN 2021 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"2. FSA FST and Regular Expressions.tex"
-(./2. FSA FST and Regular Expressions.tex
+**Overview.tex
+(./Overview.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -110,8 +110,8 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count187
 \l__pdf_internal_box=\box47
 )
-(./2. FSA FST and Regular Expressions.aux)
-\openout1 = `"2. FSA FST and Regular Expressions.aux"'.
+(./Overview.aux)
+\openout1 = `Overview.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
@@ -184,43 +184,53 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<./images/fsa1.png, id=1, 1127.21124pt x 391.4625pt>
-File: ./images/fsa1.png Graphic file (type png)
-<use ./images/fsa1.png>
-Package pdftex.def Info: ./images/fsa1.png  used on input line 18.
-(pdftex.def)             Requested size: 345.0pt x 119.81102pt.
+
+LaTeX Warning: File `./images/fsa1.png' not found on input line 18.
+
+
+! Package pdftex.def Error: File `./images/fsa1.png' not found: using draft set
+ting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 ...phics[width=\linewidth]{./images/fsa1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `fig:fsa1' on page 1 undefined on input line 24.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/fsa1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 47--49
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Overview.aux)
 
- []
+LaTeX Warning: There were undefined references.
 
-<./images/fst1.png, id=13, 449.68pt x 277.035pt>
-File: ./images/fst1.png Graphic file (type png)
-<use ./images/fst1.png>
-Package pdftex.def Info: ./images/fst1.png  used on input line 64.
-(pdftex.def)             Requested size: 172.5pt x 106.272pt.
-[2 <./images/fst1.png>] (./2. FSA FST and Regular Expressions.aux) ) 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2257 strings out of 483183
- 32395 string characters out of 5966293
- 264765 words of memory out of 5000000
- 17266 multiletter control sequences out of 15000+600000
- 534337 words of font info for 31 fonts, out of 8000000 for 9000
+ 2277 strings out of 483183
+ 32322 string characters out of 5966293
+ 264717 words of memory out of 5000000
+ 17272 multiletter control sequences out of 15000+600000
+ 534813 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,5n,29p,248b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/mat
-t/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on "2. FSA FST and Regular Expressions.pdf" (2 pages, 88867 byte
-s).
+ 34i,4n,29p,219b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/matt/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600p
+k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Overview.pdf (2 pages, 60661 bytes).
 PDF statistics:
- 33 PDF objects out of 1000 (max. 8388607)
- 20 compressed objects within 1 object stream
+ 36 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

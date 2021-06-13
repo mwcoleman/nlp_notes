@@ -1,0 +1,22 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {1}Statistical Machine Translation}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Background: Noisy Model}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The general aim is to maximise faithfulness and fluency. We use the 'Noisy Channel' model, which takes the (reverse) perspective that a message has been corrupted in some way and the task is to find the original message.}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{If we were translating from a foreign sequence $F=f_1, f_2, .., f_n$ into an English sentence $E=e_1, e_2, .., e_n$, then:}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$P(F|E)$ is the translation model (corresponding to faithfulness) and requires a parallel corpus to learn probabilities. $P(E)$ is our language model (corresponding to fluency) and needs only a single language corpus (i.e. an n-gram language model).}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Naive Translation Model (Phrase Based)}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Idea: Use a phrase (sequence of words) and/or single words as the fundamental units. Assuming that the parallel corpus is phrase aligned and may feature one-to-many alignments, the steps are:}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The overall translation probability becomes:}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Word Alignment Translation Model: IBM Model 1}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.1}Definition}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{As direct phrase alignments are difficult, the problem might get broken down into one of word alignments.}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Let us assume the following:}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Then the generative steps of producing F from E are:}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.2}Decoding: Computing $P(F|E)$ and the most probable alignment}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Using the word alignment model, the probability of generating F from E is the probability of F from E with some alignment.}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The alignment term (second term above) is assumed uniform for all alignments and comes about from knowing there are $(I+1)^J$ possible alignments to choose from where $J$ (the length of $F$) is chosen with some small (uniform) probability represented by $\epsilon $}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$A$ is our decoding (and is the latent variable). We find it by:}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.3}Training the model with EM: An example}{3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The parameters to be learned are $t(f_i|e_{aj})$}{3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Two sentence pairs:\\}{3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The vocabularies are:\\}{3}\protected@file@percent }
