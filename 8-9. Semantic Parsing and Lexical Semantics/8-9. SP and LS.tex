@@ -1,0 +1,92 @@
+\documentclass[]{article}
+
+\begin{document}
+
+\section{Semantic Parsing}
+\paragraph{Note: This section is fairly rough. It may or may not be updated in future}
+\paragraph{Natural language is ambiguous, ambiguity makes computational methods difficult. Therefore a traditional approach for semantic parsing is to first map the natural language to some unambiguous logical statement, e.g. prepositional logic or first order logic.}
+
+\subsection{Semantic Role Labelling - Shallow Semantic Parsing}
+\paragraph{SRL is the process of labelling each noun phrase that is an argument to the verb (basically all of them). Some typical roles include:}
+
+\begin{itemize}
+	\item agent
+	\item patient
+	\item source
+	\item destination
+	\item instrument
+\end{itemize}
+
+\paragraph{SRL can be useful in assisting question answering, information retrieval, text summarisation, machine translation...}
+
+\subsubsection{Approaches}
+\begin{enumerate}
+	\item Hand coded rules based on grammatical knowledge, e.g. (Syntactic) the Agent is often the subject, (Sectional restrictions / Verb constraints) Agents should be animate.. etc
+	\item Statistical methods as a sequence labelling task (HMM / CRF / Token classifiers)
+	\item (If a parse tree is available) using a parse tree as features with statistical methods
+	 
+\end{enumerate}
+
+\subsection{Semantic Parsing - Proper}
+\paragraph{The task of transforming natural language into completely formal meaning representations}
+\subsubsection{Example Formats}
+\begin{itemize}
+	\item \textbf{Predicate Logic Query Language}\\
+	\textnormal "What is the smallest state by area?"\\
+	\textnormal{$answer(x_1,smallest(x_2,state(x_1),area(x_1,x_2)))$}
+	\item \textbf{Functional Query Language (functional and variable free)}\\
+	\textnormal "What is the smallest state by area?"\\
+	\textnormal{$answer(smallest\_one(area(state(all)))$}
+\end{itemize}
+
+\subsubsection{Approaches}
+
+\begin{enumerate}
+	\item Supervised training with annotated pairs
+	\item Compositional methods building an MR recursively bottom up using a parse tree
+	\item As a word alignment/machine translation problem (WASP) using e.g. IBM model 5
+	\item Using CFSG's (Context Free Semantic Grammars) with CKY algorithm:
+	\begin{enumerate}
+		\item Annotate the data set as necessary, grouping by category (E.g. "I": Person, "like": verb, "milk": food)
+		\item Define ALL possible rules from the annotations and sentences only ($\$Person \rightarrow I, Mel$)
+		\item Break into CNF form as needed using placeholder variables
+		\item Use CKY to build up a semantic tree.
+	\end{enumerate}
+	
+\end{enumerate}
+
+\section{Lexical Semantics}
+
+\subsection{Word Sense Disambiguation}
+\subsubsection{Learning for WSD}
+\begin{enumerate}
+	\item Treat as a (unsupervised) classification problem, assume that P.O.S. tags have been determined for target word
+	\item Extract useful features for the classifier:
+	\begin{itemize}
+		\item Surrounding bag of words (BOW)
+		\item P.O.S. of neighbouring words
+		\item Local co-locations
+		\item Syntactic relations
+	\end{itemize}
+	\item Annotate a small set of words by hand, and use this to train a semi-supervised classifier using the Yarowski algorithm with expectation maximisation
+\end{enumerate}
+
+\subsection{Coreference Resolution}
+\paragraph{Coreference resolutoin is the task of finding all expressions that refer to the same entity in a body of text.}
+\subsubsection{High level approach}
+\begin{enumerate}
+	\item Detect "mentions" (not too difficult). Use POS tags, NER extraction, parse trees and cast a wide net
+	\item Cluster the mentions (tricky) using either a labelled corpus and supervised classifier ("Mention Ranking"), or an unsupervised clustering approach
+\end{enumerate}
+\subsubsection{Mention Pairs and Mention Ranking}
+\paragraph{Given a mention, we would like to find the most likely entity that it refers to. We assume that there is a labelled corpus (although it is possible to use an unlabelled corpus with EM and counts). To simplify the search space, we apply some simple heuristics:}
+\begin{itemize}
+	\item Recency (more likely to refer to a recent entity)
+	\item Centering (more likely to refer to the central document entity)
+	\item Gender/number agreement
+	\item Grammatical role
+	\item Parallelism
+	
+\paragraph{Simply train either a binary classifier with a threshold (mention pairs) or a softmax/multiclass classifier (mention ranking)}
+\end{itemize}
+\end{document}
